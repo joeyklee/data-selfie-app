@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Data Selfie</title>
+    <link rel="stylesheet" href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css"/>
+</head>
+<body class="code lh-copy w-100 h-100 bg-navy pa4">
+    <div class="w-100 tr">
+        <small> <a class="f7 underline hot-pink" href="/logs">/logs</a></small>
+    </div>
+    <main class="w-100 h-100 flex flex-column justify-center items-center">
+        <header class="w-100 f-headline lh-solid yellow tc">
+            <h1 class="f1">Here I am at</h1>
+            <h2 class="f2"><span class="underline" id="lat"></span>, <span class="underline" id="lon"></span></h2>
+        </header>
+
+        <div class="pa2 ba bw2 shadow-1 br2 b--yellow" id="mySketch"></div>
+        <button id="submitButton" class="mt4 f3 w5 h3 bn shadow-1 grow bg-yellow hot-pink br2">🚀</button>
+    </main>
+    
+    <!-- p5 libraries -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/p5.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/addons/p5.dom.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/addons/p5.sound.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/p5.geolocation@1.0.1/p5.geolocation.min.js"></script>
+    <script src="sketch.js"></script>
+</body>
+</html>
