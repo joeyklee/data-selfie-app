@@ -3,12 +3,39 @@
 <head>
 	<title>My Logs</title>
 	<link rel="stylesheet" href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css"/>
+	<style>
+
+		
+		img{
+			opacity:1;
+			width:300px;
+			height:300px;
+			/* transition: opacity 1s; */
+		}
+		img:hover {
+			/* opacity:1; */
+			animation: expander ease-in .25s forwards; 
+		}
+
+		@keyframes expander {
+			0% { width:400px; 
+				height: 400px; 
+				opacity:0.5;
+			 	margin-top:0px; }
+			50%  { 
+				width:600px !important; 
+				height: 600px !important; } /* ignored */
+			100%   { width:400px; 
+			height: 400px; 
+			opacity:1.0;}
+		}
+	</style>
 </head>
 <body class="code lh-copy w-100 h-100 bg-white pa4">
 	<div class="w-100 tr">
 		<small> <a class="f7 underline hot-pink" href="/">/📷</a></small>
 	</div>
-	<main class="w-100 h-100 flex flex-column">
+	<main class="w-100 h-100 flex flex-column items-center" id="main">
 
 	</main>
 	
