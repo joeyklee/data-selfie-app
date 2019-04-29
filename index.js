@@ -79,7 +79,7 @@ app.get("/export/all", (req, res) => {
         } 
         docs.forEach(item => {
             const outImage = item.image.replace(/^data:image\/png;base64,/, '');
-            fs.writeFileSync(path.resolve(__dirname, `./exports/${item.created}.png`) , outImage, 'base64');
+            fs.writeFileSync(path.resolve(__dirname, `./exports/all/${item.created}.png`) , outImage, 'base64');
             console.log('writing ', `${item.created}.png`)
         })
         res.send('done!')
