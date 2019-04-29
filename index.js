@@ -2,6 +2,7 @@ const express = require('express');
 const logger = require('morgan');
 const path = require('path');
 const http = require('http');
+const fs = require('fs');
 const port = process.env.PORT || 3030;
 const Datastore = require('nedb');
 const pathToData = path.resolve(__dirname, "db/db")
@@ -66,6 +67,25 @@ app.post("/api", (req, res) => {
         res.json(docs);
     });
 })
+
+/**  
+ * 
+ * Export all images to PNG on the server
+ * */ 
+app.get("/export/all", (req, res) => {
+    db.find({}).sort({'created':1}).exec(function (err, docs) {
+        if(err){
+            return err;
+        } 
+        docs.forEach(item => {
+            const outImage = item.image.replace(/^data:image\/png;base64,/, '');
+            fs.writeFileSync(path.resolve(__dirname, `./exports/${item.created}.png`) , outImage, 'base64');
+            console.log('writing ', `${item.created}.png`)
+        })
+        res.send('done!')
+    });
+})
+
 
 
 // use the http module to create an http server listening on the specified port
